@@ -11,7 +11,7 @@ class LinkedList(object):
 
     # Constructor
     def __init__(self):
-        self.head = None                        # First node of the linked list
+        self.head = None                        # Empty list
         self.size = 0                           # Size = 0 in the begining
 
     # Insert data in the beginning of the list
