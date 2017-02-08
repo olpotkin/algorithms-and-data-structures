@@ -13,10 +13,35 @@ class AVL(object):
     def __init__(self):
         self.root = None                        # no root in the beginning
 
+
+    def insert(self, data):
+        self.root = self.insertNode(data, self.root)
+
+
+    def insertNode(self, data, node):
+        if not node:                            # if node is None ->
+            return Node(data)                   # -> return new Node initialized with a given data
+
+        if data < node.data:
+            # Recursive call for left subtree
+            node.leftChild = self.insertNode(data, node.leftChild)
+        else:
+            node.rightChild = self.insertNode(data, node.rightChild)
+        # Update the height parameter
+        node.height = max(self.calcHeight(node.leftChild), self.calcHeight(node.rightChild)) + 1
+
+        return self.settleViolation(data, node)
+
+
+
+
+
+
     def calcHeight(self, node):
         if not node:                            # if node is None ->
             return -1                           # -> there is no child Node: length = -1
         return node.height
+
 
     # If it returns value > 1  --> it is a LEFT HEAVY tree  --> RIGHT rotation
     # If it returns value < -1 --> it is a RIGHT HEAVY tree --> LEFT rotation
@@ -25,6 +50,7 @@ class AVL(object):
             return 0                            # -> there is leaf node
         # Calculate difference between left subtree and right subtree
         return self.calcHeight(node.leftChild) - self.calcHeight(node.rightChild)
+
 
     def rotateRight(self, node):
         print("Rotating to the RIGHT on node {0}".format(node.data))
@@ -39,6 +65,7 @@ class AVL(object):
         tempLeftChild.height = max(self.calcHeight(tempLeftChild.leftChild), self.calcHeight(tempLeftChild.rightChild)) + 1
 
         return tempLeftChild
+
 
     def rotateLeft(self, node):
         print("Rotating to the LEFT on node {0}".format(node.data))
