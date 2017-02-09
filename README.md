@@ -1,5 +1,5 @@
 # algorithms-and-data-structures
-- Data structures:
+###- Data structures:
 1. Array
 2. Linked list
 3. Stack
@@ -9,6 +9,6 @@
 7. Heap
 8. Dictionary
 
-- Algorithms:
+###- Algorithms:
 1. Breadth-first Search
 2. Depth-first Search
