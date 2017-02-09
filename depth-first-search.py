@@ -11,7 +11,7 @@ class Node(object):
 # DFS -> stack + goes as deep as possible
 class DepthFirstSearch(object):
     def dfs(self, node):
-        node.visited = True;
+        node.visited = True
         print("{0}".format(node.name))
 
         for n in node.adjacencyList:

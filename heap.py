@@ -7,7 +7,6 @@ class Heap(object):
         self.heap = [0]*Heap.HEAP_SIZE
         self.currentPosition = -1
 
-
     def insert(self, item):
 
         if self.isFull():
@@ -16,7 +15,6 @@ class Heap(object):
         self.currentPosition += 1               # shift current position
         self.heap[self.currentPosition] = item  # put item to new position
         self.fixUp(self.currentPosition)
-
 
     def fixUp(self, index):
 
@@ -29,7 +27,6 @@ class Heap(object):
             index = parentIndex
             parentIndex = int((index-1)/2)
 
-
     def isFull(self):
 
         if self.currentPosition == Heap.HEAP_SIZE:
@@ -37,12 +34,11 @@ class Heap(object):
         else:
             return False
 
-
     # After replacement of elements during the sorting
     def fixDown(self, index, upto):
 
         while index <= upto:
-            leftChild =  2*index + 1
+            leftChild = 2*index + 1
             rightChild = 2*index + 2
 
             if leftChild <= upto:
@@ -67,10 +63,9 @@ class Heap(object):
             else:
                 break
 
-
     # Perform O(N*logN) sorting IN PLACE!
     def heapsort(self):
-        for i in range(0,self.currentPosition + 1):
+        for i in range(0, self.currentPosition + 1):
             temp = self.heap[0]                 # maximum value in the root
             print("{0}".format(temp))
             self.heap[0] = self.heap[self.currentPosition - i]
