@@ -12,3 +12,9 @@
 ###- Algorithms:
 1. Breadth-first Search
 2. Depth-first Search
+3. Dijkstra's algorighm
+4. Bubble sort
+5. Insertion sort
+6. Selection sort
+7. Quick sort
+8. Merge sort
