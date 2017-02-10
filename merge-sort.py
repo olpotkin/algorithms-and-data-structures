@@ -29,6 +29,11 @@ def merge_sort(nums):
         k += 1
         i += 1
 
+    while j < len(right_half):
+        nums[k] = right_half[j]
+        k += 1
+        j += 1
+
 
 if __name__ == "__main__":
     nums = [-4, 56, 1, 3, 5, 63, 12, 4, -11, 234]
